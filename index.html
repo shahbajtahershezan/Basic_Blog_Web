@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shahbaj Taher — Blog</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    nav a {
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: #007BFF;
+    }
+
+    /* Home Section */
+    #home {
+      text-align: center;
+      padding-top: 120px;
+      padding-bottom: 100px;
+    }
+
+    #home h1 {
+      font-size: 2.8rem;
+    }
+
+    #home p {
+      font-size: 1.3rem;
+      margin-top: 15px;
+    }
+
+    /* About Section */
+    #about {
+      text-align: center;
+    }
+
+    #about img {
+      width: 160px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    #about table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+    }
+
+    #about th, #about td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    #about th {
+      background-color: #f7f7f7;
+    }
+
+    #about a {
+      color: #007BFF;
+      transition: color 0.3s;
+    }
+
+    #about a:hover {
+      color: #0056b3;
+    }
+
+    /* Projects Section */
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      background-color: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    /* Media Section */
+    .video-frame {
+      max-width: 800px;
+      margin: 30px auto 0 auto;
+    }
+
+    .video-frame iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    /* Contact Form */
+    form {
+      max-width: 600px;
+      margin: 30px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea {
+      padding: 12px 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    form button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #f7f7f7;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .projects {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav div a {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      #home h1 {
+        font-size: 2.2rem;
+      }
+
+      #home p {
+        font-size: 1.1rem;
+      }
+
+      .project-card {
+        width: 100%;
+      }
+
+      .video-frame iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Shahbaj Taher</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#media">Media</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+<section id="home">
+  <h1>Hello, I'm <span class="highlight">Shahbaj</span></h1>
+  <p>Frontend Developer | AI Enthusiast | Creative Designer</p>
+  
+  <p style="max-width: 700px; margin: 20px auto; font-size: 1.1rem;">
+    I love building clean, interactive, and user-friendly web applications that 
+    blend creativity with logic. From crafting sleek interfaces to experimenting 
+    with AI/ML projects, I enjoy transforming ideas into real digital experiences. 
+    Always learning, always creating.
+  </p>
+
+  <div style="margin-top: 25px;">
+    <a href="#projects" class="btn">View My Work</a>
+    <a href="#contact" class="btn" style="background-color:#28a745;">Hire Me</a>
+  </div>
+</section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="profile.png" alt="Profile">
+    <p>Hi! I’m <strong>Shahbaj Taher Shezan</strong> — a passionate developer from Bangladesh who loves turning ideas into functional, user-friendly websites and interactive experiences. I specialize in <strong>Frontend Web Development</strong>, <strong>JavaScript</strong>, and have growing experience in <strong>AI/ML projects</strong>.</p>
+    <p>My journey blends creativity and logic — I enjoy crafting clean, minimal designs while diving into intelligent systems like prediction models and data analysis. I’ve built a range of projects including games, AI-based apps, and full portfolio sites.</p>
+    <p>View my full portfolio: <a href="https://shahbajtahershezan.github.io/portfolio/" target="_blank">Click Here</a></p>
+
+    <table>
+      <tr>
+        <th>Platform</th>
+        <th>Details</th>
+        <th>Link</th>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>shahbajtahershezan@gmail.com</td>
+        <td><a href="mailto:shahbajtahershezan@gmail.com">Send Mail</a></td>
+      </tr>
+      <tr>
+        <td>GitHub</td>
+        <td>shahbajtahershezan</td>
+        <td><a href="https://github.com/shahbajtahershezan" target="_blank">Visit</a></td>
+      </tr>
+      <tr>
+        <td>Portfolio</td>
+        <td>Live Website</td>
+        <td><a href="https://shahbajtahershezan.github.io/portfolio/" target="_blank">Open</a></td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="project-card"> 
+        <h3>🧠 Memory Card Game</h3>
+        <p>A fun interactive memory card game using HTML, CSS & JavaScript.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>❓ Quiz Game</h3>
+        <p>Interactive quiz web app for learning with dynamic question flow.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>💼 Portfolio Website</h3>
+        <p>Responsive portfolio showcasing my skills, experience, and projects.</p>
+      </div>
+  </section>
+
+  <section id="media">
+    <h2>Learning Media</h2>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/HGTJBPNC-Gw" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:shahbajtahershezan@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <textarea name="Message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Shahbaj Taher. All rights reserved.
+  </footer>
+
+</body>
+</html>
